@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTF-8">
+        <title> Diabetes risk Assessment page </title>
+        <!-- <link rel="stylesheet" href="../static/style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+    </head> 
+
+
+<body>
+    <h1 class="h1">Diabetes Risk Test</h1>
+    <div class="container">
+    <form action="/predict" method="POST">
+
+    <div class="input-group"><label>Pregnancies</label><input type="number" name="Pregnancies"></div>
+    <div class="input-group"><label>Glocouse Level</label><input type="number" name="Glucose" required></div>
+    <div class="input-group"><label>Blood Pressure</label><input type="number" name="BloodPressure"></div>
+    <div class="input-group"><label>Skin Thikness</label><input type="number" name="SkinThickness"></div>
+    <div class="input-group"><label>insulin</label><input type="number" name="Insulin"></div>
+    <div class="input-group"><label>BMI</label><input type="number" name="BMI"required></div>
+    <div class="input-group"><label>Age</label><input type="number" name="Age" required></div>
+
+    <div class="input-group"><label>Family History</label>
+        <select class="button" name="DiabetesPedigreeFunction" required>
+        <option value="0.200">Not sure</option>
+        <option value="0.500">One parent or relative</option>
+        <option value="1.200">Multiple relatives with diabtes</option>
+        <option value="2.000">strong genetic history</option> 
+        </select> 
+    </div>    
+
+    <div class="input-group"><label>Chooe Model</label>
+        <select class="button" name="model_selection">
+        <option value="logistic">Logistic Regression</option>
+        <option value="RF">Random Forest</option>
+        </select>
+    </div>
+    
+    <button  class="submit"  type="submit">Predict Result</button>
+    </form>
+
+    {% if prediction_text %}
+
+    <div class="Result" style="background-color: rgb(225, 139, 139);"> 
+        {{prediction_text}} </div>
+    {% endif %}
+
+    </div>       
+</body>
+</html>
