@@ -103,7 +103,7 @@ The prediction is generated instantly after submitting the required information.
 
 ## 📸 Application Preview
 
-![Home Page](images/home.png)
+![Home Page](images/Home.png)
 
 ![Prediction Result](images/result.png)
 
