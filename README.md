@@ -101,6 +101,13 @@ The prediction is generated instantly after submitting the required information.
 
 ---
 
+## 📸 Application Preview
+
+![Home Page](images/home.png)
+
+![Prediction Result](images/result.png)
+
+
 ## 👨‍💻 Author
 
 **Yekta Ahmadifar**
